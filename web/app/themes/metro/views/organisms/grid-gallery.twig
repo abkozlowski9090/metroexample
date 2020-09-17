@@ -1,0 +1,30 @@
+<section {{ (content.id) ? 'id="' ~ content.id ~ '"' : '' }} class="grid-gallery {{ (section_background) ? ' '~section_background~' ' : '' }}">
+  <div class="container">
+
+    <div class="row row--reset-pad {{ (flip_sections) ? 'row--reverse-cols' : '' }}">
+
+
+      {% for image in image %}
+      <div class="col col--reset-pad col--6@med">
+        <div class="grid-gallery__image">
+          {%
+          include 'atoms/picture.twig' with {
+            'class_list': '',
+            'attr': '',
+            'alt': image.large.caption,
+            'images': {
+              'standard_img': TimberImage(image.large.url|resize(800)),
+              'standard_img_retina': TimberImage(image.large.url|resize(800)),
+              'tablet_img': (image.medium) ? TimberImage(image.medium.url|resize(900)) : TimberImage(image.large.url|resize(900)),
+              'mobile_img': (image.small) ? TimberImage(image.small.url|resize(600)) : TimberImage(image.large.url|resize(600))
+            }
+          }
+          %}
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+
+
+  </div>
+</section>

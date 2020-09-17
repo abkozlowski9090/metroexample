@@ -1,0 +1,45 @@
+.news-card {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    display: block;
+    opacity: 1;
+    transform: scale(1.05);
+    transition: transform $speed-2x $easing;
+
+
+    &:hover {
+      transform: scale(1);
+    }
+
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__categories {
+    margin-top: 10px !important;
+  }
+
+  &__title {
+    margin: 0;
+  }
+  &__excerpt {
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  &__date {
+    position: absolute;
+    background: white;
+    padding: 10px;
+    top: -25%;
+    left: -1%;
+  }
+}

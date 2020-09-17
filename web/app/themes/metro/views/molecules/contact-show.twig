@@ -1,0 +1,54 @@
+
+<div class="hero-banner__contact contact-show is-hidden js-contact-panel">
+      <div class="contact__pop-out">
+        <div id="contact-up"></div>
+        <div class="container">
+
+          <a href="#" class="contact-cross is-hidden js-contact-cross" data-module="contactshow">
+            <i></i>
+            <i></i>
+          </a>
+
+
+          <div class="footer__info">
+            <div class="row row--reset-pad">
+              <div class="col col--1@med">
+                <p class="h2"> Dominion </p>
+              </div>
+              <div class="col col--4@med">
+                <p>I</p>
+          </div>
+
+            <div class="col col--3@med">
+              <p class="h4 text--grey-text"> JLL </p>
+                <ul>
+              {% for contact in options.contact_info %}
+                <li>  {{ contact.name }} </li>
+                <li> <a href="mailto:">  {{contact.email}} </a> </li>
+                <li> {{contact.phone_number }} </li>
+                </br>
+              {% endfor %}
+                </ul>
+            </div>
+
+            <div class="col col--3@med">
+              <p class="h4 text--grey-text"> Savills </p>
+                <ul>
+                  {% for contact in options.contact_info_savills %}
+                    <li>  {{ contact.name }} </li>
+                    <li> <a href="mailto:">  {{contact.email}} </a> </li>
+                    <li> {{contact.phone_number }} </li>
+                    </br>
+                  {% endfor %}
+                </ul>
+            </div>
+
+
+        </div>
+      </div>
+
+
+
+        </div>
+      </div>
+</div>

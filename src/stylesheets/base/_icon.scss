@@ -1,0 +1,32 @@
+.icon {
+  display: block;
+
+  &--lms_logo svg {
+    width: 102px;
+    height: 38px;
+  }
+  &--twitter svg {
+    fill: $white;
+    width: 38px;
+    height: 38px;
+  }
+  &--linkedin svg {
+    fill: $white;
+    width: 38px;
+    height: 38px;
+  }
+
+  &--cbre svg {
+    fill: $white;
+    width: 38px;
+    height: 38px;
+  }
+
+  &--savills svg {
+    fill: $white;
+    width: 38px;
+    height: 38px;
+  }
+
+
+}

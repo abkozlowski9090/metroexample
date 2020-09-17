@@ -1,0 +1,11 @@
+<a href="{{ post_info.link }}" class="news-card">
+  <img src="{{ post_info.thumbnail.src|resize(400, 400) }}">
+  <div class="news-card__content">
+      <p class="text--small news-card__categories">{{ post_info.terms('category')|join(', ') }}</p>
+      <p class="news-card__title"><strong>{{ post_info.post_title }}</strong></p>
+      {% if post_info.preview|length %}
+      <p class="news-card__excerpt">{{ post_info.preview.read_more('')  | truncate(10) }}</p>
+      {% endif %}
+      <p class="news-card__date text--small">{{ post_info.date('d.m.Y') }}</p>
+  </div>
+</a>

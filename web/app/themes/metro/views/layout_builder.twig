@@ -1,0 +1,66 @@
+{% for layout in layouts %}
+  {# Hero Banner #}
+	{% if layout.acf_fc_layout == "hero_banner" %}
+		{% include 'organisms/hero_banner.twig' with {
+      'slider': layout.slider,
+      'title': layout.title,
+		} %}
+  {% endif %}
+	{# Text and Image #}
+	{% if layout.acf_fc_layout == "text_and_image" %}
+		{% include 'organisms/text_and_image.twig' with {
+			'block_content': layout.block_content,
+			'slider': layout.slider,
+			'section_background': layout.section_background,
+		} %}
+	{% endif %}
+	{# Gallery #}
+	{% if layout.acf_fc_layout == "gallery" %}
+		{% include 'organisms/gallery.twig' with {
+			'slider': layout.slider,
+			'section_background': layout.section_background,
+		} %}
+	{% endif %}
+	{# News Panel #}
+	{% if layout.acf_fc_layout == "latest_news" %}
+		{% include 'organisms/latest_news.twig' with {
+		'news': layout.latest_news,
+		} %}
+	{% endif %}
+	{# Text and Block Img Panel #}
+	{% if layout.acf_fc_layout == "text_and_image_2" %}
+		{% include 'organisms/text_and_image_2.twig' with {
+		'panel': layout.panel,
+		'image': layout.image.image,
+		'buttons': layout.buttons,
+		'contact_show': layout.contact_show,
+		'second_text_block': layout.second_text_block,
+		'flip_sections': layout.flip_sections,
+		'section_background': layout.section_background,
+		} %}
+	{% endif %}
+	{# List and Image  #}
+	{% if layout.acf_fc_layout == "list_and_image" %}
+		{% include 'organisms/list_and_image.twig' with {
+		'panel': layout.panel,
+		'image': layout.image.image,
+		'buttons': layout.buttons,
+		'second_text_block': layout.second_text_block,
+		'flip_sections': layout.flip_sections,
+		'section_background': layout.section_background,
+		} %}
+	{% endif %}
+	{# Map Panel #}
+	{% if layout.acf_fc_layout == "map_panel" %}
+		{% include 'molecules/map.twig' with {
+		'map': layout.map_panel,
+		} %}
+	{% endif %}
+	{# Grid Gallery #}
+	{% if layout.acf_fc_layout == "grid_gallery" %}
+		{% include 'organisms/grid-gallery.twig' with {
+		'panel': layout.panel,
+		'image': layout.image.image,
+		} %}
+	{% endif %}
+{% endfor %}

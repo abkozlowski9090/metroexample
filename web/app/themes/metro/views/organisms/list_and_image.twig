@@ -1,0 +1,53 @@
+<section {{ (content.id) ? 'id="' ~ content.id ~ '"' : '' }} class="list-and-image-bg {{ (section_background) ? ' '~section_background~' ' : '' }}">
+  <div class="container">
+
+    <div class="row row--reset-pad {{ (flip_sections) ? 'row--reverse-cols' : '' }}">
+
+      <div class="col col--reset-pad col--3@med">
+          <div class="list-and-image-bg__content-text">
+            <ul>
+            {% for panel in panel.left_content %}
+              <li>{{ panel.list_item }} </li>
+            {% endfor %}
+          </ul>
+          </div>
+      </div>
+
+      <div class="col col--reset-pad col--3@med">
+        <div class="list-and-image-bg__content-text">
+          <ul>
+          {% for panel in panel.right_content %}
+            <li>{{ panel.list_item }} </li>
+          {% endfor %}
+          </ul>
+        </div>
+
+      </div>
+
+
+      <div class="col col--reset-pad col--6@med">
+
+
+      {% for image in image %}
+        <div class="list-and-image-bg__image lax" data-lax-opacity="(elh*3) 0, 0 1" data-lax-translate-y="(elh*3) 150px, 0 0px" data-lax-anchor="self">
+          {%
+          include 'atoms/picture.twig' with {
+            'class_list': '',
+            'attr': 'data-lax-translate-y="0 0, elh 200px"',
+            'alt': image.large.caption,
+            'images': {
+              'standard_img': TimberImage(image.large.url|resize(800)),
+              'standard_img_retina': TimberImage(image.large.url|resize(800)),
+              'tablet_img': (image.medium) ? TimberImage(image.medium.url|resize(900)) : TimberImage(image.large.url|resize(900)),
+              'mobile_img': (image.small) ? TimberImage(image.small.url|resize(600)) : TimberImage(image.large.url|resize(600))
+            }
+          }
+          %}
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+
+
+  </div>
+</section>

@@ -1,0 +1,19 @@
+{#
+include 'atoms/picture.twig' with {
+  'class_list': STRING,
+  'alt': STRING,
+  'images': {
+    'standard_img': STRING,
+    'standard_img_retina': STRING,
+    'mobile_img': STRING,
+    'tablet_img': BOOLEAN
+  }
+}
+#}
+<picture>
+  {% if images.standard_img_retina %}<source media="(min-width: 860px) and (min-resolution: 192dpi)" srcset="{{ images.standard_img_retina }}">{% endif %}
+  {% if images.standard_img %}<source media="(min-width: 860px)" srcset="{{ images.standard_img }}">{% endif %}
+  {% if images.tablet_img %}<source media="(min-width: 750px)" srcset="{{ images.tablet_img }}">{% endif %}
+  {% if images.mobile_img %}<source srcset="{{ images.mobile_img }}">{% endif %}
+  <img src="{{ images.standard_img }}" alt="{{ alt }}" class="{{ class_list }}">
+</picture>

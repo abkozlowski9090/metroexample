@@ -1,0 +1,27 @@
+{% block html_head %}
+	{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{ body_class }}" data-template="base.twig" data-svg-sprite="{{ theme.link }}/assets/images/icons.svg" data-svg-sprite-revision="{{ svg_sprite_version }}">
+
+		{%
+		include 'organisms/site-header.twig'
+		%}
+
+		<main role="main" class="site-main" id="js-site-main">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+		</main>
+
+		{%
+			include 'organisms/site-footer.twig'
+		%}
+
+		{{ function('wp_footer') }}
+
+	</body>
+</html>

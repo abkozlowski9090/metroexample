@@ -1,0 +1,83 @@
+<footer class="footer">
+  <div class="container">
+
+
+
+      <div class="footer__info">
+        <div class="row row--reset-pad">
+          <div class="col col--1@med">
+            <p class="h2 text--medium text--font-weight-bold"> metro </p>
+          </div>
+          <div class="col col--4@med">
+            <p>If you would like to request a viewing please get in touch on the below or fill out our form, and one of our agents will be back in touch shortly.</p>
+      </div>
+
+      <div class="col col--3@med">
+        <p class="h4 text--grey-text"> CBRE </p>
+          <ul>
+        {% for contact in options.contact_info %}
+          <li>  {{ contact.name }} </li>
+          <li> <a href="mailto:">  {{contact.email}} </a> </li>
+          <li> {{contact.phone_number }} </li>
+          </br>
+        {% endfor %}
+          </ul>
+      </div>
+
+      <div class="col col--3@med">
+        <p class="h4 text--grey-text"> Savills </p>
+          <ul>
+            {% for contact in options.contact_info_savills %}
+              <li>  {{ contact.name }} </li>
+              <li> <a href="mailto:">  {{contact.email}} </a> </li>
+              <li> {{contact.phone_number }} </li>
+              </br>
+            {% endfor %}
+          </ul>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="footer__brochure">
+    <div class="row row--reset-pad">
+
+      <div class="col col--1@med">
+        <div class="arrow-up-wrapper">
+          <a data-scroll href="#hero-banner" class="btn">
+            <i></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col col--11@med">
+        <a href="http://metro.persona.studio//app/uploads/2019/06/Metro-Brochure.pdf" target="_blank" class="btn h2">View Brochure <i></i></a>
+      </div>
+
+    </div>
+  </div>
+
+<div class="row">
+  <div class="footer footer--copyright">
+    2019 &copy; Metro </br>
+    <a href="https://tilecreative.com/" target="_blank">Designed by Tile Creative </a>
+  </div>
+
+  <div class="footer__logos">
+    <a href="https://www.cbre.co.uk/"  target="_blank" >
+      <img src="{{ theme.link }}/assets/images/cbre.svg">
+    </a>
+    <a href="https://www.savills.co.uk/"  target="_blank">
+      <img class src="{{ theme.link }}/assets/images/savills.svg">
+    </a>
+    <a href="https://www.picton.co.uk/"  target="_blank">
+      <img class="wide" class src="{{ theme.link }}/assets/images/picton.svg">
+    </a>
+  </div>
+
+</div>
+
+  </div>
+
+</footer>

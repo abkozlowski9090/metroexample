@@ -1,0 +1,17 @@
+.arrow-lines {
+  i {
+    background: $white;
+    margin-left: 40PX;
+    margin-right: 10PX;
+    width: 12PX;
+    &:after,
+    &:before {
+      background: 0 0;
+      border-left: 10PX solid $white;
+    }
+
+    &:before {
+      margin-left: -15PX;
+    }
+  }
+}

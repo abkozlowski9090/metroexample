@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+{% block content %}
+{% include 'layout_builder.twig' with {
+  'layouts' : post.get_field('layout_builder')
+} %}
+
+<section>
+	<div class="container">
+		<div class="row">
+
+			{% for news_post in posts %}
+			<div class="col col--4@med">
+				{% include "molecules/news-card.twig" with {
+					post_info: news_post
+				} %}
+			</div>
+			{% endfor %}
+
+
+  	</div>
+  </div>
+</section>
+
+
+{% endblock %}

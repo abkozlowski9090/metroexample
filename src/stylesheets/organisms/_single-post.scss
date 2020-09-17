@@ -1,0 +1,38 @@
+.single-post-content {
+  display: flex;
+  flex-direction: column;
+  background: $white;
+
+
+
+  &__container {
+    margin-top: 40px;
+  }
+
+  &__title {
+
+  }
+
+  &__content {
+    height: 100%;
+
+
+  }
+
+  &__content,
+  &__title {
+    margin: 40px;
+    padding: 40px 0 60px 40px;
+
+    @include media("<med") {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    font-size: 75px;
+  }
+
+
+
+}

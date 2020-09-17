@@ -1,0 +1,41 @@
+.list-and-image-bg {
+  position: relative;
+
+  &__content {
+
+  }
+
+
+  &__content-text {
+    margin-left: 30px;
+
+    @include media("<med") {
+      margin-left: -30px;
+    }
+    li {
+      font-size: $h4-font-size;
+      list-style: none;
+      margin-top: 25px;
+
+      @include media("<med") {
+        word-break: break-word;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: relative;
+        border-top: 1px solid $grey;
+        margin-top: 15px;
+      }
+    }
+  }
+
+
+  &__image {
+    position: relative;
+    width: 100%;
+  }
+
+
+}

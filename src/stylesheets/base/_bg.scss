@@ -1,0 +1,7 @@
+.bg {
+  @each $name, $color in $colorMap {
+    &--#{$name} {
+      background-color: $color !important;
+    }
+  }
+}

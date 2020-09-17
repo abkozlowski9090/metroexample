@@ -1,0 +1,52 @@
+.nav-cta-btn {
+  a {
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  .btn {
+    padding: 10PX 45px 10px 45px;
+    height: 50PX;
+    background: 0 0;
+    border: 1px solid $white;
+
+    @include media("<lrg") {
+    padding: 10PX 25px 10px 25px;
+    }
+
+    i {
+      background: $white;
+      margin-left: 40PX;
+      margin-right: 10PX;
+      width: 20PX;
+      &:after,
+      &:before {
+        background: 0 0;
+        border-left: 8PX solid $white;
+      }
+
+      &:before {
+        margin-left: -15PX;
+      }
+    }
+
+    &:hover {
+      color: $black;
+      box-shadow: inset 0px 0px 0px 1PX $white;
+      &:before {
+        transform: scaleY(1);
+      }
+      i {
+        background: $black;
+        &:after,
+        &:before {
+          border-left: 8PX solid $black;
+        }
+
+        &:before {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+}

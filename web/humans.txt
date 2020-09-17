@@ -1,0 +1,10 @@
+
+/* TEAM */
+Design & Development: Persona Studio
+Twitter: @personastudiouk
+Site: http://persona.studio
+
+/* SITE */
+Standards: HTML5, CSS3
+Components: WordPress
+Software: Atom, NPM, Postcss

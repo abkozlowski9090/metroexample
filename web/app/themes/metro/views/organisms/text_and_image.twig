@@ -1,0 +1,71 @@
+
+<section id="text-and-image" class="text-and-image {{ (section_background) ? ' '~section_background~' ' : '' }}">
+  <div class="container">
+
+
+
+        <div class="text-and-image__carousel" data-module="textandimgblock">
+          {% for slide in slider.block_content %}
+            <div class="carousel-cell">
+              <div class="row">
+                <div class="text-and-image__shape">
+                      {% include 'atoms/icon.twig' with { 'icon': 'shape-2' } %}
+                </div>
+                <div class="col col--6@med">
+                  <div class="text-and-image__image">
+                  {%
+                  include 'atoms/picture.twig' with {
+                    'class_list': '',
+                    'alt': slide.image.large.caption,
+                    'images': {
+                      'standard_img': TimberImage(slide.image.large.url|resize(1600, 800)),
+                      'standard_img_retina': TimberImage(slide.image.large.url|resize(2400, 1245)),
+                      'tablet_img': (slide.image.medium) ? TimberImage(slide.image.medium.url|resize(900, 900)) : TimberImage(slide.image.large.url|resize(900, 900)),
+                      'mobile_img': (slide.image.small) ? TimberImage(slide.image.small.url|resize(600, 600)) : TimberImage(slide.image.large.url|resize(600, 600))
+                    }
+                  }
+                  %}
+                </div>
+            </div>
+
+
+
+              <div class="col col--6@med">
+                <div class="text-and-image__content">
+
+
+                  <div class="text-and-image__title">
+                    <p class="h1">{{ slide.title }}</p>
+                  </div>
+
+                  <div class="text-and-image__text">
+                    <p class="h3">{{ slide.text_block }}</p>
+                  </div>
+
+
+
+                    <div class="text-and-image__button">
+                      <a href="{{ slide.button.page }}" class="btn h2">{{ slide.button.text }} <i></i></a>
+                    </div>
+
+
+                </div>
+              </div>
+
+              </div>
+
+            </div>
+
+        {% endfor %}
+
+        </div>
+
+
+
+
+  </div>
+
+
+
+
+</section>

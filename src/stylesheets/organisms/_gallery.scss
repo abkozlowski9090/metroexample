@@ -1,0 +1,200 @@
+.gallery {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  margin-bottom: 5%;
+
+  @include media("<lrg") {
+    height: 100vh;
+  }
+
+  @include media("<med") {
+    height: 100%;
+  }
+
+  &__carousel {
+    width: 100%;
+    height: 100%;
+
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -9%;
+      right: 2%;
+      height: 80%;
+      width: 50%;
+      margin-bottom: 20px;
+      background: $purple;
+      z-index: -1;
+    }
+  }
+
+  &__image {
+
+
+  }
+
+  .carousel-cell {
+    width: 100%;
+  }
+
+  &__shape {
+    position: absolute;
+    bottom: -6%;
+    left: 30%;
+    z-index: 99999;
+    transform: translateX(30px);
+
+    .icon {
+      height: 300px;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    @include media("<med") {
+      bottom: -4%;
+    }
+  }
+
+  .flickity-prev-next-button {
+    top: 97%!important;
+
+
+
+    @include media("<med") {
+      display: none;
+    }
+
+
+    svg {
+      width: 30%;
+    }
+
+    &:after {
+      content: '';
+      width: 30px;
+      height: 1PX;
+      background: $black;
+      left: 14PX;
+      position: absolute;
+      transition: all $speed $easing;
+    }
+
+    &:before {
+      content: '';
+      width: 15px;
+      height: 1PX;
+      background: $black;
+      left: 50PX;
+      position: absolute;
+      transition: all $speed $easing;
+    }
+
+    .arrow {
+      fill: $black;
+      &:hover {
+        fill: $black!important;
+      }
+    }
+
+    &:hover {
+        &:before {
+          left: 25PX;
+        }
+    }
+  }
+
+  .flickity-prev-next-button.next {
+      right: 85%!important;
+      margin-top: -22px;
+      transform: rotate(180deg);
+      svg {
+        transform: rotate(180deg);
+      }
+
+      @include media("<lrg") {
+        right: 65%!important;
+      }
+
+      @include media("<med") {
+        right: 0%!important;
+        top: 115%!important;
+      }
+  }
+
+  .flickity-prev-next-button.previous {
+    left: 0;
+
+    @include media("<med") {
+      top: 115%!important;
+    }
+  }
+
+  .flickity-page-dots {
+    display: none;
+    @include media("<med") {
+      display: block;
+      bottom: -20%;
+    }
+  }
+
+//   &__carousel-nav-btn {
+//   &:before,
+//   &:after {
+//     content: '';
+//     display: block;
+//   }
+//
+//   &--disabled {
+//     opacity: .5;
+//     pointer-events: none;
+//   }
+//
+//   &--prev,
+//   &--next {
+//     display: block;
+//     position: absolute;
+//     transition: all $speed $easing;
+//     border: none;
+//     padding: 20px 10px 10px 10px;
+//     z-index: 99;
+//   }
+//
+//   &--next {
+//     left: 20%;
+//     bottom: -95%;
+//     @include media("<med") {
+//       margin-top: 0;
+//       margin-left: 90%;
+//     }
+//   }
+//
+//   &--prev {
+//     left: 7%;
+//     bottom: -5%;
+//     transform: rotate(180deg);
+//
+//     @include media("<med") {
+//       margin-top: 0;
+//     }
+//   }
+//
+//   &--next {
+//     margin-left: 100PX;
+//   }
+//
+//   &--prev {
+//     margin-left: 2%;
+//     transform: rotate(180deg);
+//   }
+// }
+
+.btn {
+  &:before {
+      background: 0 0;
+  }
+}
+
+}

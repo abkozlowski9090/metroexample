@@ -1,0 +1,62 @@
+.footer {
+  background: $light-grey;
+  color: $black;
+  padding: $space-6x 0 $space-2x 0;
+  &__title {
+    width:100%;
+
+    h4 {
+      margin-top: 10px;
+    }
+  }
+
+
+  &__info {
+    ul {
+      color: $black;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      list-style: none;
+      font-size: $small-font-size;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &--copyright {
+    padding-bottom: 20px;
+    @include media(">med") {
+      padding-top: 4rem;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__logos {
+    display: inline-flex;
+    @include media(">med") {
+      padding-top: 2rem;
+    }
+
+    img {
+      width: 100px;
+      margin-right: 20px;
+      &.wide {
+        width: 160px;
+      }
+    }
+
+    a {
+      &:nth-child(odd) {
+        margin-top: 10px;
+      }
+    }
+
+  }
+
+
+}

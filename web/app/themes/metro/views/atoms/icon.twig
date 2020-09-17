@@ -1,0 +1,5 @@
+{#
+include 'atoms/icon.twig' with
+  { 'icon': STRING }
+#}
+<span class='icon icon--{{icon}}'><svg><use xlink:href='#{{icon}}'></use></svg></span>

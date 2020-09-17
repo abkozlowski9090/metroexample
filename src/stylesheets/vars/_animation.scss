@@ -1,0 +1,13 @@
+$speed: .2s;
+$speed-2x: .4s;
+$speed-3x: .6s;
+$speed-4x: .8s;
+$speed-5x: 1s;
+
+$easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+$easing-elastic-out: cubic-bezier(0.555, 1.140, 0.555, 1.140);
+
+.fade-out {
+  opacity: 0;
+}

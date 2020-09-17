@@ -1,0 +1,7 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  {% include 'layout_builder.twig' with {
+  	'layouts' : post.get_field('layout_builder')
+  } %}
+{% endblock %}

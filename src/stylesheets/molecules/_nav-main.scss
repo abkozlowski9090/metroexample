@@ -1,0 +1,77 @@
+.nav-main {
+  padding: 1rem 0;
+
+
+  @include media(">med") {
+    padding: 4px 0;
+  }
+  @include media("<med") {
+    height: 100%;
+  }
+  &__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    @include media("<med") {
+      height: 100%;
+      flex-direction: column;
+      margin-left: -30px;
+    }
+  }
+
+  &__item {
+    margin: 0 10px;
+  }
+  &__link {
+    color: $white;
+    font-size: $h3-font-size;
+    font-weight: 400;
+    display: block;
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin: 0 $space-2x;
+    position: relative;
+    transition: transform $speed $easing;
+
+
+    @include media("<wide") {
+      margin: 0 0;
+    }
+    @include media("<xl") {
+      margin: 0 0;
+    }
+
+    @include media("<med") {
+      color: $black;
+      padding: $space 0;
+      margin: 0;
+      font-size: $h2-font-size;
+    }
+
+    .icon {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &.active,
+    &:hover {
+      &:after {
+        transform: scale(1);
+      }
+      // text-decoration: underline;
+    }
+
+    &--home {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:hover {
+      color: $purple;
+      transition: transform $speed $easing;
+    }
+  }
+}

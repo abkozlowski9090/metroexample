@@ -1,0 +1,27 @@
+{% if latest_news|length %}
+
+<section id="text-and-image" class="news-panel colour--black">
+  <div class="container">
+    <div class="row">
+      <div class="news-panel__carousel" data-module="newscarousel">
+        {% for news_post in latest_news %}
+        <div class="carousel-cell">
+          {% include "molecules/news-card.twig" with {
+            post_info: news_post
+          } %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+<div class="col col--12@med">
+    <div class="row row--justify-center">
+      <a href="/news/" class="btn"> Read More </a>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+{% endif %}

@@ -1,0 +1,95 @@
+.contact-show {
+
+  .col {
+    margin-bottom: 120px;
+  }
+
+
+
+  &.is-hidden {
+    display: none;
+  }
+
+  .contact {
+    position: relative;
+
+    &__pop-out {
+      z-index: 99999;
+      color: $white;
+      height: 100vh;
+      background: $light-grey;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      transition: all $speed $easing;
+      &.show {
+        display: block;
+      }
+
+      .container {
+        margin-top: 50px;
+
+        @include media("<med") {
+          margin-top: 0;
+        }
+      }
+
+
+      @include media("<med") {
+        background: $grey;
+        height: 100vh;
+        position: relative;
+        width: 100%;
+        display: flex;
+        z-index: 9999999;
+        top: -10px;
+      }
+
+
+
+    }
+  }
+
+a {
+  color: $black;
+}
+
+
+.contact-cross {
+    display: block;
+    width: 2.2rem;
+    height: 2rem;
+    margin-top: 10%;
+    position: relative;
+    float: right;
+    transition: all $speed $easing;
+
+    @include media("<med") {
+      float: none;
+      margin-top: 10%;
+    }
+
+    i {
+      width: 100%;
+      height: .2rem;
+      background: $black;
+      position: absolute;
+      transition: all $speed-2x $easing;
+      &:nth-child(1) {
+        transform: translateY(12.5px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        top: 85%;
+        margin-top: -0.16rem;
+        transform: translateY(-12.5px) rotate(-45deg);
+      }
+    }
+  }
+
+}
+
+.is-hidden {
+  display: none;
+}

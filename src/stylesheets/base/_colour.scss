@@ -1,0 +1,24 @@
+.colour {
+  @each $name, $color in $colorMap {
+    &--#{$name} {
+      color: $color;
+      p {
+        color: inherit;
+      }
+      hr {
+        background-color: $color;
+      }
+      svg,
+      .flickity-prev-next-button .arrow,
+      .flickity-prev-next-button:hover .arrow {
+        fill: $color;
+      }
+    }
+  }
+}
+
+.icon-white {
+  svg {
+    fill: $white;
+  }
+}

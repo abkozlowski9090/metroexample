@@ -1,0 +1,48 @@
+//
+// Mixins to apply header styles
+//
+
+@mixin header-style {
+  color: inherit;
+  display: block;
+  margin: 0 0 0.5em 0;
+  padding: 0;
+  &:only-child {
+    margin: 0;
+  }
+}
+
+@mixin header-style-h1 {
+  @include header-style;
+
+  line-height: $header-line-height;
+  font-size: $h1-font-size;
+}
+
+@mixin header-style-h2 {
+  @include header-style;
+
+  line-height: $header-line-height;
+  font-size: $h2-font-size;
+}
+
+@mixin header-style-h3 {
+  @include header-style;
+
+  line-height: $header-line-height;
+  font-size: $h3-font-size;
+}
+
+@mixin header-style-h4 {
+  @include header-style;
+
+  line-height: $header-line-height;
+  font-size: $h4-font-size;
+}
+
+@mixin header-style-h5 {
+  @include header-style;
+
+  line-height: $header-line-height;
+  font-size: $h5-font-size;
+}

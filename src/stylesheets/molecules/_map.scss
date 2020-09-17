@@ -1,0 +1,39 @@
+.map {
+  width: 100%;
+  height: 70vh;
+
+  .marker {
+    margin-left: 20px;
+    margin-top: 180PX;
+    width: 140PX;
+    height: 140PX;
+    background: url('../images/map-pin.svg');
+    background-repeat: no-repeat;
+    background-size: 90PX 40PX;
+  }
+}
+
+.map-wrapper {
+  position: relative;
+  margin-top: 120px;
+
+  .container {
+    &:after {
+      content: '';
+      position: absolute;
+      top: -5%;
+      left: -30PX;
+      height: 60%;
+      width: 50%;
+      margin-bottom: 1.25rem;
+      background: #6f23f9;
+      z-index: -1;
+    }
+  }
+
+}
+
+
+.mapboxgl-map {
+
+}

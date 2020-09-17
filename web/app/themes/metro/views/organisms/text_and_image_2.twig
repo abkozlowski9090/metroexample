@@ -1,0 +1,73 @@
+<section id="text-and-image" {{ (content.id) ? 'id="' ~ content.id ~ '"' : '' }} class="text-block-image-bg {{ (section_background) ? ' '~section_background~' ' : '' }}">
+  <div class="container">
+
+    <div class="row row--reset-pad {{ (flip_sections) ? 'row--reverse-cols' : '' }}">
+      <div class="col col--reset-pad col--6@med">
+        <div class="text-block-image-bg__content">
+          {% if panel.title %}
+            <p class="h1">{{ panel.title }}</p>
+          {% endif %}
+          {% if panel.sub_title %}
+            <p class="h2">{{ panel.sub_title }} </p>
+          {% endif %}
+          {% if panel.content %}
+          <div class="text-block-image-bg__content-text">
+            {{ panel.content }}
+          </div>
+          {% endif %}
+        </div>
+
+        {% for button in panel.buttons %}
+          <div class="text-block-image-bg__button-wrapper">
+            <div class="text-block-image-bg__button">
+              <a href="{{ button.page.url }}" class="btn h2">{{ button.text }} <i></i></a>
+            </div>
+          </div>
+        {% endfor %}
+
+        {% if panel.contact_show %}
+          <div class="text-block-image-bg__button-wrapper">
+            <div class="text-block-image-bg__button">
+              <p data-module="contactshow" class="btn h2">Request a viewing <i></i></p>
+            </div>
+          </div>
+        {% endif %}
+
+      </div>
+
+
+      <div class="col col--reset-pad col--6@med">
+
+        {% if second_text_block %}
+          <div class="text-block-image-bg__second_text">
+            {{ second_text_block.content }}
+          </div>
+        {% endif %}
+
+
+      {% for image in image %}
+        <div class="text-block-image-bg__shape" >
+              {% include 'atoms/icon.twig' with { 'icon': 'shape-2-white' } %}
+        </div>
+        <div class="text-block-image-bg__image lax" data-lax-opacity="(elh*3) 0, 0 1" data-lax-translate-y="(elh*3) 150px, 0 0px" data-lax-anchor="self" >
+          {%
+          include 'atoms/picture.twig' with {
+            'class_list': '',
+            'attr': 'data-lax-translate-y="0 0, elh 200px"',
+            'alt': image.large.caption,
+            'images': {
+              'standard_img': TimberImage(image.large.url|resize(1200, 850)),
+              'standard_img_retina': TimberImage(image.large.url|resize(1200, 850)),
+              'tablet_img': (image.medium) ? TimberImage(image.medium.url|resize(640, 330)) : TimberImage(image.large.url|resize(640, 330)),
+              'mobile_img': (image.small) ? TimberImage(image.small.url|resize(640, 330)) : TimberImage(image.large.url|resize(640, 330))
+            }
+          }
+          %}
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<section class="hero-banner cover-bg">
+  {% if post.thumbnail %}
+	{%
+	include 'atoms/picture.twig' with {
+		'class_list': 'cover-bg__img',
+		'alt': post.thumbnail.large.caption,
+		'images': {
+			'standard_img': TimberImage(post.thumbnail.src|resize(1600, 830)),
+			'standard_img_retina': TimberImage(post.thumbnail.src|resize(2400, 1245)),
+			'tablet_img': (post.thumbnail.src) ? TimberImage(post.thumbnail.src|resize(900, 900)) : TimberImage(post.thumbnail.src|resize(900, 900)),
+			'mobile_img': (post.thumbnail.src) ? TimberImage(post.thumbnail.src|resize(600, 600)) : TimberImage(post.thumbnail.src|resize(600, 600))
+		}
+	}
+	%}
+
+	{% endif %}
+
+</section>
+
+
+
+	<article class="single-post-content">
+		<div class="container single-post-content__container">
+	    <div class="row row--reset-pad row--reverse-cols">
+
+				<div class="col col--reset-pad col--6@med">
+					<div class="single-post-content__content">
+						{{ post.content }}
+					</div>
+				</div>
+
+				<div class="col col--6@med">
+					<div class="single-post-content__title">
+						<p class="h1">	{{ post.title }} </p>
+					</div>
+				</div>
+
+
+		</div>
+	</div>
+</article>
+
+
+{%
+	include 'organisms/latest_news.twig'
+%}
+
+
+
+{% endblock %}

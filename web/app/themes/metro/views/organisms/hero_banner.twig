@@ -1,0 +1,46 @@
+
+<header class="hero-banner colour--white">
+  <div class="hero-banner__bg">
+  <div id="hero-banner" class="hero-banner__carousel" data-module="herocarousel">
+    {% for slide in slider.images %}
+    <div class="carousel-cell cover-bg lax" data-lax-translate-y="0 0, elh 200px">
+      {%
+      include 'atoms/picture.twig' with {
+        'class_list': 'cover-bg__img',
+        'alt': slide.image.large.caption,
+        'images': {
+          'standard_img': TimberImage(slide.image.large.url|resize(1600, 830)),
+          'standard_img_retina': TimberImage(slide.image.large.url|resize(2400, 1245)),
+          'tablet_img': (slide.image.medium) ? TimberImage(slide.image.medium.url|resize(900, 900)) : TimberImage(slide.image.large.url|resize(900, 900)),
+          'mobile_img': (slide.image.small) ? TimberImage(slide.image.small.url|resize(600, 600)) : TimberImage(slide.image.large.url|resize(600, 600))
+        }
+      }
+      %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+  <div class="hero-banner__shape">
+      {% include 'atoms/icon.twig' with { 'icon': 'shape-1' } %}
+</div>
+
+
+
+
+    <div class="container hero-banner__container">
+
+        <div class="col col--9@med">
+          <p class="h1">{{ slider.title }}</p>
+        </div>
+
+  </div>
+
+</header>
+
+
+<div class="arrow-down-wrapper">
+  <a data-scroll href="#text-and-image" class="btn">
+  <i></i>
+</a>
+</div>

@@ -1,0 +1,25 @@
+{#
+	include 'molecules/nav.twig'
+#}
+
+<nav class="nav-main" role="navigation">
+	<ul class="nav-main__items reset-list">
+	{% for item in menu.get_items %}
+		<li class="nav-main__item {{item.classes | join(' ')}}">
+			<a class="nav-main__link" href="{{item.link}}">{{item.title}}</a>
+			{% if item.get_children %}
+				<div class="mega-nav">
+					<ul class="nav-main__items nav-main__items--drop">
+					{% for child in item.get_children %}
+						<li class="nav-drop-item {{ (item.get_children|length > 10) ? 'nav-drop-item--small' : '' }}">
+							<a class="nav-link" href="{{child.get_link}}"><span>{{child.title}}</span></a>
+						</li>
+					{% endfor %}
+					</ul>
+				</div>
+
+			{% endif %}
+		</li>
+	{% endfor %}
+	</ul>
+</nav><!-- /.nav-main -->

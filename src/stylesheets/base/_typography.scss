@@ -1,0 +1,160 @@
+html {
+  font-size: 62.5%; // 10px
+
+  @include media(">xs") {
+    font-size: 75%; // 12px
+  }
+
+  @include media(">med") {
+    font-size: 87.5%; // 14px
+  }
+
+  @include media(">lrg") {
+    font-size: 100%; // 16px
+  }
+}
+
+body {
+  color: $textColor;
+  font-family: $base-font;
+  font-size: inherit;
+  font-weight: $base-font-weight;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  color: $black;
+  line-height: $base-line-height;
+  margin: 0 0 $p-space 0;
+  &:only-of-type {
+    margin: 0;
+  }
+  a {
+    color: inherit;
+  }
+  strong {
+    font-weight: $base-bold-font-weight;
+  }
+}
+
+a {
+  color: inherit;
+}
+
+.h1 {
+  font-size: $h1-font-size;
+  line-height: 1;
+  font-weight: bold;
+
+  @include media("<lrg") {
+    font-size: 3rem;
+  }
+
+  @include media("<med") {
+    font-size: 60px;
+  }
+}
+
+.h2 {
+  font-size: $h2-font-size;
+}
+
+.h3 {
+  font-size: $h3-font-size;
+}
+
+hr {
+  border: none;
+  display: block;
+  width: 100px;
+  height: 1px;
+  margin: 0 auto $space 0;
+  background-color: $textColor;
+}
+
+.text {
+  &--small {
+    font-size: $small-font-size;
+    line-height: $small-font-size*2;
+  }
+  &--medium {
+    font-size: $medium-font-size;
+    line-height: $medium-font-size*1.5;
+  }
+  &--large {
+    font-size: $large-font-size;
+    line-height: $large-font-size*1.5;
+  }
+  &--xl {
+    font-size: $xl-font-size;
+    line-height: $xl-font-size;
+  }
+  &--center {
+    text-align: center;
+    &-med-up {
+      text-align: left;
+      @include media(">med") {
+        text-align: center;
+      }
+    }
+    &-med-down {
+      text-align: left;
+      @include media("<med") {
+        text-align: center;
+      }
+    }
+  }
+  &--left {
+    text-align: left;
+    &-med-up {
+      @include media(">med") {
+        text-align: left;
+      }
+    }
+    &-med-down {
+      @include media("<med") {
+        text-align: left;
+      }
+    }
+  }
+  &--header {
+    font-family: $header-font;
+    font-weight: $header-font-weight;
+  }
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--light-grey-text {
+    color: $light-grey;
+  }
+
+  &--grey-text {
+    color: $grey;
+  }
+
+  &--font-weight-bold {
+    font-weight: $header-font-weight;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+  font-weight: $header-font-weight;
+}
+
+h1 {
+  @include header-style-h1;
+}
+h2 {
+  @include header-style-h2;
+}
+h3 {
+  @include header-style-h3;
+}
+h4 {
+  @include header-style-h4;
+}
+h5 {
+  @include header-style-h5;
+}
